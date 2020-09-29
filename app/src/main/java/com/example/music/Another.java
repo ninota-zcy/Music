@@ -44,8 +44,11 @@ public class Another extends AppCompatActivity {
                 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, null, null,
                 MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
         if (cursor != null) {
-            Log.v("test","cursor不为空");
-            while (cursor.moveToNext()) {
+            Log.v("test","cursor不为空"+cursor.toString());
+
+            for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext())
+            {
+                Log.v("test","加入list");
                 //从属性名很容易看出所代表的音乐文件属性，所以一下属性不做讲解了
                 String id = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media._ID));
                 String title = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE));
@@ -57,6 +60,7 @@ public class Another extends AppCompatActivity {
                 Music myMusic = new Music(id, title , time);
                 myMusics.add(myMusic);
             }
+
             adapter.notifyDataSetChanged();
         }
         else{
