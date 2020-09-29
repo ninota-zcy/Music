@@ -2,9 +2,9 @@ package com.example.music;
 
 import android.graphics.drawable.BitmapDrawable;
 
-import org.litepal.crud.LitePalSupport;
+import org.litepal.crud.DataSupport;
 
-public class Music extends LitePalSupport {
+public class Music extends DataSupport{
     private String musicId;
     private String musicName;
     private String singer;
@@ -98,15 +98,10 @@ public class Music extends LitePalSupport {
         this.path = path;
     }
 
-    public Music(String musicId, String musicName, String singer, String path, int size, int time, String album, boolean isCheck, BitmapDrawable albumPic) {
+    public Music(String musicId, String musicName ,int time) {
         this.musicId = musicId;
         this.musicName = musicName;
-        this.singer = singer;
-        this.path = path;
-        this.size = size;
         this.time = time;
-        this.album = album;
-        this.isCheck = isCheck;
-        this.albumPic = albumPic;
+
     }
 }

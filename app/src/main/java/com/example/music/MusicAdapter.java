@@ -89,7 +89,9 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ViewHolder> 
     public void setSelected(int selected) {
         this.selected = selected;
     }
-
+    public void setOnItemClickListener(OnClickListener onClickListener) {
+        this.onItemClickListener = onClickListener;
+    }
     public MusicAdapter(List<Music> musicList) {
         this.musicList = musicList;
     }

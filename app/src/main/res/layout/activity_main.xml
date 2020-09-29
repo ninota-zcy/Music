@@ -5,14 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <include layout="@layout/toolbar"/>
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/music_list"
         android:layout_above="@id/seekbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
+
 
     <LinearLayout
         android:id="@+id/music_manager"
@@ -72,7 +73,7 @@
             android:layout_weight="1"
             android:text="0:0" />
 
-        <android.support.v7.widget.AppCompatSeekBar
+        <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/seek_bar"
             android:layout_width="0dp"
             android:layout_height="50dp"
